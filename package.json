@@ -4,14 +4,17 @@
   "main": "index.html",
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
+    "firebase": "^3.0.3",
     "history": "^2.1.2",
     "html5shiv": "^3.7.3",
     "jquery": "^2.1.4",
+    "re-base": "^1.5.1",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-mixin": "^3.0.5",
     "react-router": "^2.4.1",
+    "reactfire": "^1.0.0",
     "respond.js": "^1.4.2"
   },
   "devDependencies": {

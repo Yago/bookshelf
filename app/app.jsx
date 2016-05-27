@@ -3,14 +3,15 @@ import ReactDOM           from 'react-dom';
 import getMuiTheme        from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider   from 'material-ui/styles/MuiThemeProvider';
 
-import Bookshelf    from './components/Bookshelf.jsx';
-import NotFound     from './components/NotFound.jsx';
+import Container    from './components/Container.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
-        <Bookshelf />
+        <div>
+          <Container />
+        </div>
       </MuiThemeProvider>
     );
   }

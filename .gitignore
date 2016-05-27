@@ -4,6 +4,8 @@ node_modules
 .publish
 .env
 
+app/config.json
+
 /dist
 /build
 /public
