@@ -5,12 +5,8 @@
     "ghpages": "public"
   },
   "vendors": {
-    "css": [
-      ""
-    ],
-    "fonts": [
-      ""
-    ]
+    "css": [],
+    "fonts": []
   },
   "images": [
     "app/img/**/*"

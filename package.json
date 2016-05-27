@@ -25,6 +25,7 @@
     "browser-sync": "^2.7.1",
     "casperjs": "^1.1.0-beta3",
     "chai": "^3.4.1",
+    "connect-history-api-fallback": "^1.2.0",
     "contentful-metalsmith": "^0.1.0",
     "del": "~2.2.0",
     "dotenv": "^2.0.0",

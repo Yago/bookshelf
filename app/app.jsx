@@ -1,18 +1,19 @@
-import React               from 'react';
-import ReactDOM            from 'react-dom';
-import { Router, Route }   from 'react-router';
-import { createHistory }   from 'history';
+import React              from 'react';
+import ReactDOM           from 'react-dom';
+import getMuiTheme        from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider   from 'material-ui/styles/MuiThemeProvider';
 
-import NotFound            from './components/NotFound.jsx';
+import Bookshelf    from './components/Bookshelf.jsx';
+import NotFound     from './components/NotFound.jsx';
 
-/*
-  Routes
-*/
+class App extends React.Component {
+  render() {
+    return (
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <Bookshelf />
+      </MuiThemeProvider>
+    );
+  }
+}
 
-const routes = (
-  <Router history={createHistory()}>
-    <Route path="*" component={NotFound}/>
-  </Router>
-);
-
-ReactDOM.render(routes, document.querySelector('#main'));
+ReactDOM.render(<App />, document.querySelector('#app'));

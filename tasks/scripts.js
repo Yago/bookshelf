@@ -26,7 +26,7 @@ module.exports = function() {
       title: 'Compile Error',
       message: '<%= error.message %>'
     }).apply(this, args);
-    this.emit('end'); // Keep gulp from hanging on this task
+    this.emit('end');
   }
 
   /**
@@ -53,7 +53,7 @@ module.exports = function() {
    * Lint JS
    */
   gulp.task('scripts-lint', function() {
-    return gulp.src(config.assets + 'js/*.js')
+    return gulp.src(config.assets + '**/*.{js,jsx}')
       .pipe($.plumber({errorHandler: errorAlert}))
       .pipe($.eslint())
       .pipe($.eslint.format());
