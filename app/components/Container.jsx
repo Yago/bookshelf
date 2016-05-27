@@ -11,6 +11,7 @@ import config     from './../config.json';
 firebase.initializeApp(config.firebase);
 
 import Bookshelf    from './Bookshelf.jsx';
+import AddBook      from './AddBook.jsx';
 
 class Container extends React.Component {
   constructor() {
@@ -31,6 +32,7 @@ class Container extends React.Component {
       <div className="container">
         <h1>Container here !</h1>
         <Bookshelf books={this.state.books} />
+        <AddBook />
       </div>
     );
   }
