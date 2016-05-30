@@ -23,6 +23,7 @@ class AddBook extends React.Component {
     return (
       <div>
         <h3>Add a new book</h3>
+        <div className="spacer spacer-sm"></div>
         <form ref="bookForm" onSubmit={this.createBook.bind(this)}>
           <div className="form-group">
             <input type="text" ref="title" className="form-control" placeholder="Title"/>
@@ -36,7 +37,7 @@ class AddBook extends React.Component {
           <div className="form-group">
             <input type="number" ref="year" className="form-control" placeholder="Year"/>
           </div>
-          <button type="submit" className="btn btn-info">Add</button>
+          <button type="submit" className="btn btn-success">Add</button>
         </form>
       </div>
     );

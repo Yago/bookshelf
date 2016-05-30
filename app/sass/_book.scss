@@ -2,6 +2,7 @@
 
 .book {
   perspective: 1000px;
+  margin-bottom: $grid-gutter-width / 2;
   background: $mine-shaft;
 
   &.flipped .book-inner {
@@ -32,11 +33,15 @@
 }
 
 .book-front {
+  position: relative;
   z-index: 2;
   transform: rotateY(0deg);
 }
 
 .book-back {
+  padding: 1em;
+  background: $mine-shaft;
+  z-index: 99999;
   transform: rotateY(180deg);
 }
 

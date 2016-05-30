@@ -9,7 +9,7 @@ class Bookshelf extends React.Component {
   render() {
     const books = this.props.books.map((book, key) => {
       return (
-        <div className="col-sm-3" key={key}>
+        <div className="col-xs-6 col-sm-3 col-md-2" key={key}>
           <Book
             book={book}
             bookKey={key}
@@ -21,7 +21,14 @@ class Bookshelf extends React.Component {
 
     return (
       <div>
-        <h3>Bookshelf</h3>
+        <div className="spacer spacer-sm"></div>
+        <h1 className="text-center">
+          My Bookshelf
+          <button className="btn btn-success" onClick={this.props.toggleSidebar}>
+            <i className="glyphicon glyphicon-plus"></i>
+          </button>
+        </h1>
+        <div className="spacer spacer-md"></div>
         <div className="row">
           {books}
         </div>

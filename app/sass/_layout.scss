@@ -20,3 +20,30 @@
   padding: 0 $grid-gutter-width / 2;
   color: $white;
 }
+
+h1 .btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 1em;
+  padding: 0;
+  text-align: center;
+  border: 0;
+  border-radius: 40px;
+}
+
+.spacer {
+  height: 65px;
+  &.spacer-xl { height: 120px; }
+  &.spacer-lg { height: 90px; }
+  &.spacer-sm { height: 30px; }
+  &.spacer-ssm { height: 15px; }
+  &.spacer-xs { height: 10px; }
+  @media only screen and (max-width: 767px) {
+    height: 30px;
+    &.spacer-xl { height: 50px; }
+    &.spacer-lg { height: 50px; }
+    &.spacer-sm { height: 20px; }
+    &.spacer-xs { height: 10px; }
+  }
+}
+

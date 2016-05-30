@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   removeBook(key) {
-    if(confirm("Are you sure you want to remove this book?!")) {
+    if(confirm('Are you sure you want to remove this book ?!')) {
       this.firebaseRefs['books'].child(key).remove();
     }
   }
@@ -60,11 +60,11 @@ class App extends React.Component {
     return (
       <div>
         <div className="container">
-          <button className="btn btn-primary" onClick={this.toggleSidebar.bind(this)}>Toggle</button>
           <Bookshelf
             books={this.state.books}
             removeBook={this.removeBook.bind(this)}
-            updateBook={this.updateBook.bind(this)} />
+            updateBook={this.updateBook.bind(this)}
+            toggleSidebar={this.toggleSidebar.bind(this)} />
         </div>
         <div className={sidebarClasses}>
           <div className="sidebar-content">
