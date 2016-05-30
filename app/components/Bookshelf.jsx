@@ -9,19 +9,23 @@ class Bookshelf extends React.Component {
   render() {
     const books = this.props.books.map((book, key) => {
       return (
-        <Book
-          key={key}
-          book={book}
-          bookKey={key}
-          removeBook={this.props.removeBook}
-          updateBook={this.props.updateBook} />
+        <div className="col-sm-3">
+          <Book
+            key={key}
+            book={book}
+            bookKey={key}
+            removeBook={this.props.removeBook}
+            updateBook={this.props.updateBook} />
+        </div>
       );
     });
 
     return (
       <div>
         <h3>Bookshelf</h3>
-        {books}
+        <div className="row">
+          {books}
+        </div>
       </div>
     );
   }

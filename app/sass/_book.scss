@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+.book {
+  perspective: 1000px;
+
+  &.flipped .book-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.book,
+.book-front,
+.book-back {
+  width: 100%;
+}
+
+.book-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.book-front,
+.book-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.book-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.book-back {
+  transform: rotateY(180deg);
+}
