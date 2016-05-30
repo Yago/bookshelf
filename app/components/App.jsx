@@ -39,7 +39,9 @@ class App extends React.Component {
   }
 
   removeBook(key) {
-    this.firebaseRefs['books'].child(key).remove();
+    if(confirm("Are you sure you want to remove this book?!")) {
+      this.firebaseRefs['books'].child(key).remove();
+    }
   }
 
   toggleSidebar() {

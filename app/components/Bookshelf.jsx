@@ -9,9 +9,8 @@ class Bookshelf extends React.Component {
   render() {
     const books = this.props.books.map((book, key) => {
       return (
-        <div className="col-sm-3">
+        <div className="col-sm-3" key={key}>
           <Book
-            key={key}
             book={book}
             bookKey={key}
             removeBook={this.props.removeBook}

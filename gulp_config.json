@@ -6,7 +6,9 @@
   },
   "vendors": {
     "css": [],
-    "fonts": []
+    "fonts": [
+      "node_modules/bootstrap-sass/assets/fonts/bootstrap/*"
+    ]
   },
   "images": [
     "app/img/**/*"

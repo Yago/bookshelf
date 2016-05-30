@@ -2,10 +2,13 @@
 
 .book {
   perspective: 1000px;
+  background: $mine-shaft;
 
   &.flipped .book-inner {
     transform: rotateY(180deg);
   }
+
+  &:hover .book-informations { opacity: 1; }
 }
 
 .book,
@@ -35,4 +38,34 @@
 
 .book-back {
   transform: rotateY(180deg);
+}
+
+.book-informations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $grid-gutter-width / 2;
+  background: rgba(0, 0, 0, 0.5);
+  color: $white;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  > div {
+    width: 100%;
+    background: $mine-shaft;
+  }
+
+  .btn-link {
+    width: 50%;
+    color: $white;
+    transition: background 0.3s;
+    &:hover:first-child { background: $brand-warning; }
+    &:hover:last-child { background: $brand-danger; }
+  }
 }
