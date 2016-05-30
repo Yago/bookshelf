@@ -27,12 +27,33 @@ class Container extends React.Component {
     this.bindAsArray(firebaseRef, 'books');
   }
 
+  addBook(book) {
+    this.firebaseRefs['books'].push(book);
+  }
+
+  updateBook(book) {
+    this.firebaseRefs['books'].child(book.key).update(book);
+  }
+
+  removeBook(key) {
+    this.firebaseRefs['books'].child(key).remove();
+  }
+
   render() {
     return (
       <div className="container">
         <h1>Container here !</h1>
-        <Bookshelf books={this.state.books} />
-        <AddBook />
+        <div className="row">
+          <div className="col-sm-6">
+            <Bookshelf
+              books={this.state.books}
+              removeBook={this.removeBook.bind(this)}
+              updateBook={this.updateBook.bind(this)} />
+          </div>
+          <div className="col-sm-6">
+            <AddBook addBook={this.addBook.bind(this)} />
+          </div>
+        </div>
       </div>
     );
   }

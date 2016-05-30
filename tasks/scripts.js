@@ -41,7 +41,6 @@ module.exports = function() {
         debug: true
       })
       .transform(babelify.configure({
-        //stage : 0,
         presets: ['es2015', 'react']
       }))
       .bundle()
