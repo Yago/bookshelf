@@ -2,11 +2,13 @@
   App
 */
 
-import React      from 'react';
-import ReactFire  from 'reactfire';
-import reactMixin from 'react-mixin';
-import firebase   from 'firebase';
-import config     from './../config.json';
+import React                from 'react';
+import ReactFire            from 'reactfire';
+import reactMixin           from 'react-mixin';
+import CSSTransitionGroup   from 'react-addons-css-transition-group';
+import firebase             from 'firebase';
+import classNames           from 'classnames';
+import config               from './../config.json';
 
 firebase.initializeApp(config.firebase);
 
@@ -18,6 +20,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      isSidebarOpen: false,
       books : []
     };
   }
@@ -39,16 +42,29 @@ class App extends React.Component {
     this.firebaseRefs['books'].child(key).remove();
   }
 
+  toggleSidebar() {
+    this.state.isSidebarOpen = this.state.isSidebarOpen ? false : true;
+    this.setState({
+      isSidebarOpen : this.state.isSidebarOpen
+    });
+  }
+
   render() {
+    const sidebarClasses = classNames({
+      'sidebar': true,
+      'open': this.state.isSidebarOpen
+    });
+
     return (
       <div>
         <div className="container">
+          <button className="btn btn-primary" onClick={this.toggleSidebar.bind(this)}>Toggle</button>
           <Bookshelf
             books={this.state.books}
             removeBook={this.removeBook.bind(this)}
             updateBook={this.updateBook.bind(this)} />
         </div>
-        <div className="sidebar">
+        <div className={sidebarClasses}>
           <div className="sidebar-content">
             <AddBook addBook={this.addBook.bind(this)} />
           </div>

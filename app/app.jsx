@@ -5,9 +5,7 @@ import App    from './components/App.jsx';
 
 class Main extends React.Component {
   render() {
-    return (
-      <App />
-    );
+    return <App />;
   }
 }
 

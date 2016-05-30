@@ -21,8 +21,7 @@ class AddBook extends React.Component {
   render() {
     return (
       <div>
-        <hr/>
-        <h3>Add book from here</h3>
+        <h3>Add a new book</h3>
         <form ref="bookForm" onSubmit={this.createBook.bind(this)}>
           <div className="form-group">
             <input type="text" ref="title" className="form-control" placeholder="Title"/>

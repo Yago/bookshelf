@@ -1,5 +1,22 @@
 @charset 'UTF-8';
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  overflow: auto;
   background: $mine-shaft;
+  transform: translateX(250px);
+  transition: transform 0.3s;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-content {
+  padding: 0 $grid-gutter-width / 2;
+  color: $white;
 }
