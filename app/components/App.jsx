@@ -1,5 +1,5 @@
 /*
-  Container
+  App
 */
 
 import React      from 'react';
@@ -13,7 +13,7 @@ firebase.initializeApp(config.firebase);
 import Bookshelf    from './Bookshelf.jsx';
 import AddBook      from './AddBook.jsx';
 
-class Container extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
 
@@ -41,16 +41,15 @@ class Container extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>Container here !</h1>
-        <div className="row">
-          <div className="col-sm-6">
-            <Bookshelf
-              books={this.state.books}
-              removeBook={this.removeBook.bind(this)}
-              updateBook={this.updateBook.bind(this)} />
-          </div>
-          <div className="col-sm-6">
+      <div>
+        <div className="container">
+          <Bookshelf
+            books={this.state.books}
+            removeBook={this.removeBook.bind(this)}
+            updateBook={this.updateBook.bind(this)} />
+        </div>
+        <div className="sidebar">
+          <div className="sidebar-content">
             <AddBook addBook={this.addBook.bind(this)} />
           </div>
         </div>
@@ -59,6 +58,6 @@ class Container extends React.Component {
   }
 }
 
-reactMixin.onClass(Container, ReactFire);
+reactMixin.onClass(App, ReactFire);
 
-export default Container;
+export default App;
